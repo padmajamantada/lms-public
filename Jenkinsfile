@@ -1,13 +1,9 @@
 pipeline {
-    agent any
-
+    agent any 
     stages {
-        stage('Build') {
+        stage('Build') { 
             steps {
-                https://github.com/padmajamantada/lms-public.git
-
+                https://github.com/padmajamantada/lms-public.git 
             }
-        }
-
-    }
-  
+        }  
+}
