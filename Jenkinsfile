@@ -1,10 +1,15 @@
+#jenkins file
 pipeline {
-    agent any 
-    stages {
-        stage('Build') { 
+    agent any
+    stages 
+{
+        stage('gIT checkout') 
+      {
             steps {
-                https://github.com/padmajamantada/lms-public.git 
-            }
-        }  
+
+               git branch: 'main', url: 'https://github.com/padmajamantada/lms-public.git'
+          }
+
+        }
    }
 }
