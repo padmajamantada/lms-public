@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Docker-build') {
             steps {
-                sh 'docker build -f /lms-public/Dockerfile1 -t lmsfront .' 
+                sh 'docker build -f /lms-public/Dockerfile1 -t frontend .' 
             }
        }
    }
