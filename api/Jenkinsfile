@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git code') {
+            steps {
+                 git branch: 'main', url: 'https://github.com/padmajamantada/lms-public.git'
+
+            }
+        }
+
+    stage('Docker-backend build and run') {
+            steps {
+                sh 'cd api && docker build -f Dockerfile -t backend .'
+
+                sh 'docker run -d -p 80:8080 backend'
+            }
+        }
+
+
+    }
+
+}
