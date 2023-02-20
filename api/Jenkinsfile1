@@ -9,3 +9,11 @@ pipeline {
         dockerImage = ''
     }
 }
+ stages {
+        
+         stage('creating  new docker network') {
+            steps {
+               
+                sh 'docker network create lmsnetwork'
+            }
+        }
