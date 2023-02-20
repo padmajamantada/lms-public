@@ -1,5 +1,5 @@
 pipeline {
-    agent {
+    agent any
      label 'docker'
 
     stage('Docker-backend build and run') {
@@ -12,6 +12,6 @@ pipeline {
 
 
     }
-}
+
 
 
