@@ -1,0 +1,11 @@
+pipeline {    
+       agent{
+       label 'docker'
+    }
+    environment {
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+     registry = "padmaja11ravi/backend-lms"
+        registryCredential = 'dockerhub'
+        dockerImage = ''
+    }
+}
