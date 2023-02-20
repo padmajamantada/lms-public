@@ -1,13 +1,5 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Git code') {
-            steps {
-                 git branch: 'main', url: 'https://github.com/padmajamantada/lms-public.git'
-
-            }
-        }
+    agent 
 
     stage('Docker-backend build and run') {
             steps {
@@ -20,4 +12,4 @@ pipeline {
 
     }
 
-}
+
