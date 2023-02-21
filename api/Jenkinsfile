@@ -16,7 +16,7 @@ pipeline {
                 sh ' echo $DOCKERHUB_CREDENTIALS_PSW docker login -u $DOCKERHUB_CREDENTIALS_USR --password-std '
                 sh ' docker run -p 8080:8080 --network kona3 -e DATABASE_URL=postgresql://postgres:anuraagk24@lmsdb3:5432/postgres -e PORT=8080 -e MODE=local backend'
                 sh ' docker build -t backend '
-                sh 'docker push padmaja11ravi/backend-lms'
+              
        
 
            
