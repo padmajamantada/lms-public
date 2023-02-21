@@ -4,11 +4,11 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                sh 'docker network create -d bridge kona2'
+                sh 'docker network create -d bridge kona3'
                 sh ' docker network ls'
-                sh ' docker run -d -p 5432:5432 --network kona2 -e  POSTGRES_PASSWORD=anuraagk24 --name lmsdb2 postgres'
+                sh ' docker run -d -p 5432:5432 --network kona3 -e  POSTGRES_PASSWORD=anuraagk24 --name lmsdb3 postgres'
                 sh ' echo $DOCKERHUB_CREDENTIALS_PSW docker login -u $DOCKERHUB_CREDENTIALS_USR --password-std '
-                sh ' docker run -p 8080:8080 --network kona2 -e DATABASE_URL=postgresql://postgres:anuraagk24@lmsdb2:5432/postgres -e PORT=8080 -e MODE=local backend'
+                sh ' docker run -p 8080:8080 --network kona3 -e DATABASE_URL=postgresql://postgres:anuraagk24@lmsdb3:5432/postgres -e PORT=8080 -e MODE=local backend'
                 sh ' docker build -t backend '
        
 
