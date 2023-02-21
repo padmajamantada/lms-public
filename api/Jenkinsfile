@@ -4,7 +4,9 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                sh '   
+                sh 'docker network create -d bridge kona'
+                sh ' docker network ls'
+   
             }
         }
     }
